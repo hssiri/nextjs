@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
+// import Navbar from "./components/navbar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +17,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  // const header = (
+  //   <header>
+  //     <div>
+  //       <h1 className="mx-auto text-3xl text-center font-bold">Welcome To My Blog</h1>
+  //       <br/>
+  //     </div>
+  //   </header>
+  // )
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Navbar/><br/>
+        {/* {header} */}
+        <div className="container h-full pt-10">
+        {children}
+        </div>
+        
+        </body>
     </html>
   );
 }
