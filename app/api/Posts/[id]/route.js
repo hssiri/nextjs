@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 
 export async function PUT(request, {params}){
     const { id }= params;
-    const {newTitle: title , newContent: content} = await request.json();
+    const {newTitle: title , newContent: content , newImageUrl: imageUrl } = await request.json();
     await connectMongoDB();
-    await Post.findByIdAndUpdate(id, {title, content});
+    await Post.findByIdAndUpdate(id, {title, content, img:imageUrl});
     return NextResponse.json({message: "Post Updated"},{status:200});
 }
 

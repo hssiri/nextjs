@@ -17,12 +17,12 @@ const getPostById = async(id) =>{
 export default async function Edit({ params }){
     const {id} = params;
     const {post} = await getPostById(id);
-    const {title , content} = post
+    const {title , content , imageUrl} = post
 
     return(
         <div>
             <h1 className="text-center font-semibold text-2xl my-4">Edit Post</h1>
-            <EditPost id={id} title={title} content={content}/>
+            <EditPost id={id} title={title} content={content} imageUrl={imageUrl} />
         </div>
         
     )

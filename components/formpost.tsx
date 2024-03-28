@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { UploadDropzone } from "@/utils/uploadthings";
-import Image from "next/image";
+
 
 
 const Formpost = () => {
@@ -17,7 +17,7 @@ const Formpost = () => {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
 
-        if (!title || !content || !imageUrl) {
+        if (!title || !content) {
             alert("Fill all fields.")
             return;
         }
